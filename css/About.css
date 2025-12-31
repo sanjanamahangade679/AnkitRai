@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #020617, #020d1f);
+  color: #e5e7eb;
+}
+
+.page {
+  max-width: 1300px;
+  margin: auto;
+  padding: 80px 30px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+}
+
+.section-label {
+  color: #22d3ee;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 15px 0 20px;
+}
+
+p {
+  color: #9ca3af;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* Arsenal */
+.arsenal h3,
+.right h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.arsenal-item {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.arsenal-item:hover {
+  border-color: #22d3ee;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #1e293b;
+}
+
+.timeline-item {
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #22d3ee;
+}
+
+/* Recognition */
+.recognition {
+  margin-top: 40px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.rec-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rec-item i {
+  color: #facc15;
+}
+
+/* Animations */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}

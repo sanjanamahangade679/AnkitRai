@@ -1,0 +1,110 @@
+/* ================= HEADER INTERACTIVE ================= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 20, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 50px;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    background: #050814;
+    box-shadow: 0 6px 25px rgba(46, 236, 240, 0.3);
+}
+
+/* Logo */
+.logo img {
+    height: 42px;
+    cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Animated underline */
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #2EECF0, #00ffcc);
+    left: 0;
+    bottom: -6px;
+    transition: width 0.4s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #2EECF0;
+}
+
+/* Let's Talk Button */
+.talk-btn {
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #2EECF0, #00ffcc);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talk-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #2EECF0;
+}
+
+/* Mobile menu */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        background: #050814;
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 12px;
+        transition: right 0.4s ease;
+    }
+
+    .nav.active {
+        right: 20px;
+    }
+}
